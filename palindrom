@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+//unicorn
     char st1[30]="madam";
     char st2[30];
     int i=0,j,length=0;
