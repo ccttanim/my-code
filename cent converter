@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int amount{0},pennies{0},dollars{0},quarters{0},dimes{0},nickel{0},balance{0};
+    cout<<"Enter an amount in cents : ";
+    cin>>amount;
+    dollars=amount/100;
+    balance=amount%100;
+    quarters=balance/25;
+    balance%=25;
+    dimes=balance/10;
+    balance%=10;
+    nickel=balance/5;
+    balance%=5;
+    pennies=balance;
+
+    cout<<"You can provide change for this change as folllows: "<<endl;
+    cout<<"dollars  : "<<dollars<<endl;
+    cout<<"quarters : "<<quarters<<endl;
+    cout<<"dimes    : "<<dimes<<endl;
+    cout<<"nickel   : "<<nickel<<endl;
+    cout<<"pennies  : "<<pennies<<endl;
+
+
+         return 0;
+
+}
