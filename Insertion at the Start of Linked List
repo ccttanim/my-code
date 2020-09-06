@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node
+{
+
+    int n1;
+    struct node *ptr;
+};
+
+int main()
+{
+
+    int count =0;
+    int choice=1;
+    node *temp,*last=NULL,*head;
+
+    while(choice==1)
+    {
+        temp=(node *)malloc(sizeof(node));
+        cout<<"Enter a data"<<endl;
+        cin>>temp->n1;
+
+        if(last==0)
+        {
+            last=head=temp;
+
+        }
+        else
+        {
+            last->ptr=temp;
+            last=temp;
+        }
+        cout<<"Do you want to continu(Type 0 or 1)?\n";
+        cin>>choice;
+
+    }
+    last->ptr=0;
+    temp=head;
+    while(temp!=0)
+    {
+
+        cout<<" => "<<temp->n1;
+        count++;
+        temp=temp->ptr;
+    }
+
+    cout<<endl;
+    cout<<"Number of nodes= "<<count<<endl;
+
+    //starting inserting node
+
+    cout<<"Do you want to insert element at the start (Type 0 or 1)?"<<endl;
+    cin>>choice;
+    while (choice==1)
+    {
+        temp=(node *)malloc(sizeof(node));
+        cout<<"Enter the data item"<<endl;
+        cin>>temp->n1;
+        temp->ptr=head;
+        head=temp;
+        cout<<"Do you want to continue(Type 0 or 1)?"<<endl;
+        cin>>choice;
+    }
+
+    temp=head;
+    count=0;
+    while(temp!=0)
+    {
+
+        cout<<"=> "<<temp->n1;
+        count++;
+        temp=temp->ptr;
+
+    }
+    cout<<endl;
+    cout<<"Number o0f nodes = "<<count;
+    
+    return 0;
+}
