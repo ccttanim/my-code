@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node
+{
+
+    int n1;
+    struct node *prev;
+    struct node *next;
+};
+
+int main()
+{
+    node *temp=0,*last,*head;
+    int choice=1;
+    last=0;
+
+    while(choice==1)
+    {
+        temp=(node *)malloc(sizeof(node));
+        cout<<"Enter a data: "<<endl;
+        cin>>temp->n1;
+
+        if(last==0)
+        {
+            temp->prev=0;
+            temp->next=0;
+            last=head=temp;
+        }
+        else
+        {
+            last->next=temp;
+            temp->prev=last;
+            last=temp;
+            last->next=0;
+        }
+
+        cout<<"Do you want to continue(Type 0 or 1)?"<<endl;
+        cin>>choice;
+    }
+
+    temp=head;
+    cout<<"We are traversing in  forword direction"<<endl;
+    while(temp!=0)
+    {
+        cout<<" => "<<temp->n1;
+
+        temp=temp->next;
+    }
+
+    temp=last;
+
+    cout<<endl<<"We are traversing in  backward direction"<<endl;
+    while(temp!=0)
+    {
+        cout<<" => "<<temp->n1;
+
+        temp=temp->prev;
+    }
+
+
+    return 0;
+}
