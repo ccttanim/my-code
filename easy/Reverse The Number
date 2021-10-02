@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int N,sum=0,rev;
+        cin>>N;
+        while(N>0)
+        {
+            rev=N%10;
+            sum=rev+(sum*10);
+            N=N/10;
+
+        }
+        cout<<sum<<endl;
+    }
+}
