@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int T;
+  cin>>T;
+  while(T--){
+    int N;
+    cin>>N;
+    int s=0;
+    while(N>0){      
+        int d=N%10;
+        s=s+d;
+        N=N/10;
+    }
+    cout<<s<<endl;
+  }
+}
