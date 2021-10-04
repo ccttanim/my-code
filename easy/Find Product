@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N;
+    cin>>N;
+    int arr[N];
+    long int ans=1;
+    int power=pow(10,9);
+    for(int i; i<N; i++)
+    {
+        cin>>arr[i];
+        ans=(ans*arr[i])%(power+7);
+    }
+    cout<<ans;
+
+}
