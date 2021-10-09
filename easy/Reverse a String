@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,last;
+    cout<<"s= ";
+    cin>>s1;
+
+    for(int i=s1.size()-1; i>=0; --i)
+    {
+        last.push_back(s1[i]);
+    }
+    cout<<"Output: "<<last;
+
+}
