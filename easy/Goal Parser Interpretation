@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string interpret(string command) {
+        string s1="";
+        
+        for(int i=0;i<command.size();++i)
+        {
+            if(command[i] == 'G')
+            {
+                s1.push_back('G');
+            }
+            if(command[i] == '(' && command[i+1] == ')')
+            {
+                s1.push_back('o');
+            }
+            if( command[i]=='('&& command[i+1]=='a' && command[i+2]=='l'&& command[i+3]==')' )
+            {
+                s1.push_back('a');
+                s1.push_back('l');
+            }
+        }
+        return s1;
+        
+    }
+};
