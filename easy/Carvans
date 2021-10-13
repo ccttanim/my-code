@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int t;
+
+    cin>>t;
+    while(t--)
+    {
+        long int n;
+        cin>>n;
+        int32_t a[n];
+        int32_t c;
+        long int count=0;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        c=a[0];
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]<=c)
+            {
+                c=a[i];
+                count++;
+            }
+        }
+        cout<<count<<endl;
+
+    }
+
+}
