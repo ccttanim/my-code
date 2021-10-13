@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int t;
+
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        string a[n];
+        for(int i=0; i<n; i++)
+        {
+            cin>>a[i];
+        }
+        bool rf=true, cf=true;
+
+        for(int i=0; i<n; i++)
+        {
+            bool flag=true;
+            for(int j=0; j<n/2; j++)
+            {
+                if(a[i][j]!=a[i][n-j-1])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(!flag)
+            {
+                rf=false;
+                break;
+            }
+        }
+        for(int i=0; i<n; i++)
+        {
+            bool flag=true;
+            for(int j=0; j<n/2; j++)
+            {
+                if(a[j][i]!=a[n-j-1][i])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(!flag)
+            {
+                cf=false;
+                break;
+            }
+        }
+        if(rf && cf)
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+    }
+
+}
